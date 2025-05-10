@@ -10,13 +10,13 @@ import {
 import { getFirestore, enableIndexedDbPersistence } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
-  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
+  apiKey: "AIzaSyAGP46j09m5LH_XhP2qdAfB_cLNHC82rZA",
+  authDomain: "genoi-7777.firebaseapp.com",
+  projectId: "genoi-7777",
+  storageBucket: "genoi-7777.firebasestorage.app",
+  messagingSenderId: "894331831616",
+  appId: "1:894331831616:web:1e1583b1a3b8cdd140e6a5",
+  measurementId: "G-GPH8EYLKFP"
 };
 
 // Initialize Firebase
@@ -25,7 +25,7 @@ const app = initializeApp(firebaseConfig);
 // Initialize Auth with persistence
 const auth = getAuth(app);
 
-// Enable offline persistence for Firestore
+// Initialize Firestore with security rules
 const db = getFirestore(app);
 
 // Set up auth persistence and state listener after initialization
@@ -54,4 +54,5 @@ try {
   }
 }
 
+// Export initialized services
 export { auth, db, sendPasswordResetEmail, sendEmailVerification };
